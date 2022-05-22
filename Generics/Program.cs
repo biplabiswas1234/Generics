@@ -7,10 +7,10 @@ namespace Generics
            
             public static void Main(string[] args)
             {
-            MaxFloatNum maxFloatNum = new MaxFloatNum();
-            double MaximumNumber = maxFloatNum.MaximumFloat(1.2, 2.2, 0.2);
-            Console.WriteLine("Maximum Float Number is " + MaximumNumber);
+            Maxstring maxstring = new Maxstring();
+            string MaximumString = maxstring.MaximumString("Apple", "Banana", "Watermelon");
+            Console.WriteLine("Maximum String Value is " + MaximumString);
 
-            }
+        }
         }
 }
