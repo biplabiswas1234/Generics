@@ -5,25 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Generics
-{
-    internal class Maxstring
     {
-        public string FirstString, SecondString, ThirdString;
-        public string MaximumString(string FirstString, string SecondString, string ThirdString)
+        internal class MaxNumber<R> where R : IComparable
         {
-            if (FirstString.CompareTo(SecondString) > 0 && FirstString.CompareTo(ThirdString) > 0)
+            public R[] value;
+
+            public MaxNumber(R[] value)
             {
-                return FirstString;
+                this.value = value;
             }
-            else if (SecondString.CompareTo(ThirdString) > 0 && SecondString.CompareTo(FirstString) > 0)
+            public R[] Sort(R[] values)
             {
-                return SecondString;
+                Array.Sort(values);
+                return values;
             }
-            else if (ThirdString.CompareTo(FirstString) > 0 && ThirdString.CompareTo(SecondString) > 0)
+            public R MaxValue(R[] values)
             {
-                return ThirdString;
+                var SortedValues = Sort(values);
+                return SortedValues[^1];
             }
-            return FirstString;
+            public R MaxMethod()
+            {
+                var Max = MaxValue(this.value);
+                return Max;
+            }
         }
-    }
 }
